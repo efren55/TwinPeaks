@@ -1,0 +1,339 @@
+/*NOTAS 
+----> width da anchura a un bloque. Sirve para los div (bloques) y no para textos en linea.
+----> heigh es la altura de un elemento. No sirve para los textos en linea.  
+*/
+
+
+:root{
+    --marronClaro: #deb887;
+    --marron: #8b4513;
+    --verde: #6b8e23;
+    --caferojizo:#a52a2a; 
+    --amarillo:#daa520;
+    --negro: #000000; 
+    --blanco:#ffffff;
+    --prueba:#8b0000;
+    --prueba2:#ff0000;
+}
+
+/*Globales*/
+body{
+    font-family: 'Roboto';
+    font-size: 1.6rem;
+    background-image: linear-gradient(to top,var(--prueba2) 0%, var(--blanco) 100% );
+}
+
+html{
+    font-size: 62.5%;
+    box-sizing: border-box; /*Este box-sizing: border-box; indica que no se sumaran los bordes*/
+    scroll-snap-type: y mandatory; /*Es para dar scroll a la pagina*//*La Y corresponde al eje donde se va a desplazar la pagina*/
+}
+
+
+*, *:before, *:after {  /*El selector *, indica que se seleccionara todos los elementos de html*//*Las comas en los 
+    selectores indican una separacion, a estos 2 selectores se le aplican las mismas condiciones que estan entre las llaves*/
+   /*Afeter significa despues de y before antes de. Estos son pseudoelementos*/
+    box-sizing: inherit;
+}
+
+h3,h2{
+    font-size: 3rem;
+    font-weight: bolder;
+    /* text-transform: uppercase; */
+    text-align: center;
+}
+
+h1{
+    font-size: 4rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    
+}
+
+/*Header*/
+.titulo2{
+    font-size: 2rem;
+    font-weight: bolder;
+    color: var(--caferojizo);
+}
+
+.titulo{
+    color: var(--verde);
+    text-indent: 2rem; /*text-ident va posicionando el texto al lado derecho*/
+}
+
+.titulo-prueba{
+    display: flex;
+    /* flex-direction: row-reverse; */
+    justify-content: center;
+}
+.titulo-logo{
+    /*display: block;*/
+    /*margin:auto;*/
+    height: 12rem;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    /*justify-content: left;*/    
+}
+
+@media (max-width: 780px) {
+   .titulo{
+        text-align: center;
+    }
+}
+/*Navegacion*/
+.navegacion-uno{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.navegacion{
+    background-color: var(--verde);
+}
+
+.navegacion-uno a{
+    color: var(--marronClaro);
+    text-align: center;
+    font-size: 2rem ;
+    display: block;
+    text-align: center;
+    font-weight: bolder;
+    text-decoration: none;
+    padding: 1rem; /*Que tan ancho es el area donde se encuentra el contenido verticalmente*/
+}
+
+.navegacion-uno a:hover{  /*El hover debe de estar pegado al dato que se quiera modificar*/
+    background-color: var(--marron);
+    color: var(--amarillo);
+}
+
+@media (max-width:780px ) {
+    .navegacion-uno{
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+/*Body*/
+/*.presentacion-uno{
+    display: block; Como no se trata de texto, se tiene que hacer uso de display block
+    margin-bottom: 2rem;
+    height: 50rem;
+    padding: 2rem;
+    width: 80%;
+    background-repeat: no-repeat;
+    margin: auto;
+}*/
+
+.presentacion-uno{
+    display: block;
+    width: 95%; /*Porcentaje que va a cubrir la imagen en su espacio*/
+    margin: 2rem auto 2rem auto; /*Espacio hacia arriba (2rem), derecha (auto), abajo (2rem) e izquierda (auto)*/
+    height: auto; /*Altura de imagen */
+    
+}
+
+@media (min-width: 1100px) {
+    .presentacion-uno{
+    display: block; /*Hace bloque todo el elemento. Con esto se hizo posible centrar la imagen ya que tomo en cuenta el margin establecido aqui.
+    Si no se hace esto no va a tener un punto de referencia y se va a salir de los valores que deseamos.*/
+    width: 95%; /*Porcentaje que va a cubrir la imagen en su espacio*/
+    margin: 2rem auto 2rem auto; /*Espacio hacia arriba (2rem), derecha (auto), abajo (2rem) e izquierda (auto)*/
+    height: 50rem; /*Altura de imagen */
+    padding-left: 10rem; /*Este padding hacia mas chica la imagen (2rem)*/
+    padding-right: 10rem;
+    }
+}
+
+@media (max-width: 780px) {
+    .presentacion-uno{
+        width: 100%;
+        height: auto;
+        margin-top: 2rem;
+    }
+}
+
+.datos h3, .datos p{ /*Se centran los 2 textos info y parrafo*/
+    text-align: center;
+    width:auto;
+    font-weight: bold;
+}
+
+/*Se utiliza esta propiedad para centrar un div y no un texto solo.
+.datos{
+    width:130rem;
+    margin: 0 auto;
+    La propiedad de abreviatura CSS margin establece el área de margen en los cuatro lados de un elemento.
+}*/
+.datos p{
+    font-size: 1.6rem;
+}
+
+
+/*--------------Personajes-------------*/
+.nombre__personaje{
+    text-align: center;
+    margin: 3rem;
+}
+.presentacion-p, .LauraPalmer, .AudreyHorne{
+    display: flex;
+    flex-direction: row-reverse;
+    /* width: auto; */
+}
+
+.presentacion-unop, .Laura-uno, .Audrey-uno{
+    margin: 1rem;
+    width: 38rem;
+    height: 30rem;
+}
+
+.presentacion-p p, .LauraPalmer p, .AudreyHorne p {
+    text-align: justify;
+    width: 100rem;
+    padding: 5rem 2rem;
+    font-size: 1.8rem;
+}
+
+
+.truman, .LelandPalmer{
+    display: flex;
+    width: auto;
+}
+
+.truman-uno, .Leland-uno{
+    margin: 1rem;
+    width: 38rem;
+    height: 30rem;
+}
+
+.truman p, .LelandPalmer p{
+    text-align:justify;
+    /* width: 100rem; */
+    padding: 10rem 4rem;
+    font-size: 1.8rem;
+}
+
+
+.LauraPalmer p{
+    padding: 10rem 4rem;
+}
+
+
+@media (max-width: 780px) {
+    .presentacion-p,.LauraPalmer,.AudreyHorne,.truman,.LelandPalmer{
+        display: flex;
+        flex-direction: column;
+        width: auto;
+        /* justify-content: center; */
+    }
+    .presentacion-unop,.Laura-uno,.Audrey-uno,.truman-uno,.Leland-uno{
+        margin: 1rem;
+        width: auto;
+        height: auto;
+    }
+    .presentacion-p p,.LauraPalmer p, .LelandPalmer p, .AudreyHorne p, .truman p{
+        text-align: justify;
+        width: auto;
+        margin: auto;
+    }
+}
+
+/*-------Shop---------*/
+.contenedor{
+    display: grid;
+    max-width: 120rem;
+    margin: auto;
+    place-content: center;
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    column-gap: 2%;
+    grid-row-gap: 2%;
+    margin-top: 8rem;
+}
+.producto__imagen{
+    display: grid;
+    width: 95%;
+    height: 75%; /*35rem*/   
+}
+
+.producto__informacion{
+    text-align: center;
+    font-weight: 900;
+}
+.producto__precio{
+    color: var(--verde);
+    font-size: large;
+}
+
+@media (max-width: 780px) {
+    .grid{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        column-gap: 2%;
+        row-gap: 2%;
+        margin-top: 4rem;
+    }
+    .producto__imagen{
+        display: grid;
+        width: 95%;
+        height: 75%;
+    }
+   
+}
+
+
+/*------------------Curiosidades--------------------*/
+.sonora{
+    display: flex;
+    flex-direction: column;
+    width: auto;
+}
+
+.sonora__angelo,.sonora__julee,.sonora__lynch,.sonora__frost{
+    display: flex;
+    align-self: center;
+    width: 50rem;
+    max-height: 40rem;
+    margin: 1rem;
+    
+}
+
+.sonora__angeloinfo,.sonora__juleeinfo,.sonora__lynchinfo,.sonora__frostinfo{
+    text-align: center;
+    margin: 1rem 5rem;
+}
+
+@media (max-width: 500px) {
+    .sonora{
+        display: flex;
+        flex-direction: column;
+        width: auto;
+    }
+
+    .sonora__angelo,.sonora__julee,.sonora__lynch,.sonora__frost{
+        width: 100%;
+        align-self: center;
+        max-height: 25rem; /*25rem*/
+        margin: 1rem;
+    }
+
+    .sonora__angeloinfo,.sonora__juleeinfo,.sonora__lynchinfo,.sonora__frostinfo{
+        text-align: center;
+        margin: 1rem 2rem;
+    }
+   
+}
+
+
+
+
+footer{
+    font-size: 1.3rem;
+    font-weight: bold;
+    padding: 10rem;
+    text-align: center;
+}
